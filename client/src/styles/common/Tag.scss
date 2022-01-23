@@ -1,0 +1,87 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.tag {
+  border-radius: 20px;
+  border: 1px solid #1d1d1d;
+  padding: 6px 15px;
+  font-size: 14px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.selected-tag {
+  border-radius: 20px;
+  border: 1px solid #112f59;
+  padding: 6px 15px;
+  font-size: 14px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: #112f59;
+  color: #e9b500;
+  cursor: pointer;
+}
+
+.added-tag {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #c4c4c4;
+  color: #8a7f7f;
+  padding: 6px 15px;
+  font-size: 14px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  .cross {
+    margin-left: 10px;
+    font-weight: 600;
+    margin-top: -3px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .tag {
+    border-radius: 20px;
+    border: 1px solid #1d1d1d;
+    padding: 6px 15px;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  .selected-tag {
+    border-radius: 20px;
+    border: 1px solid #112f59;
+    padding: 6px 15px;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: #112f59;
+    color: #e9b500;
+    cursor: pointer;
+  }
+
+  .added-tag {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #c4c4c4;
+    color: #8a7f7f;
+    padding: 5px 12px;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    .cross {
+      margin-left: 10px;
+      font-weight: 600;
+      margin-top: -3px;
+    }
+  }
+}

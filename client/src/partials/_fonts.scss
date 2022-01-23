@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Monntserrat-Bold";
+  font-weight: Bold;
+  src: url(../assets/fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: "Monntserrat-Light";
+  font-weight: Light;
+  src: url(../assets/fonts/Montserrat-Light.ttf);
+}
+@font-face {
+  font-family: "Monntserrat-Regular";
+  font-weight: normal;
+  src: url(../assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "cinzel";
+  font-weight: normal;
+  src: url(../assets/fonts/Cinzel/cinzel.ttf);
+}
+
+@mixin bold {
+  font-family: "Monntserrat-Bold";
+  font-weight: 600;
+}
+@mixin normal {
+  font-family: "Monntserrat-Regular";
+  font-weight: 400;
+}
+@mixin light {
+  font-family: "Monntserrat-Light";
+  font-weight: 100;
+}
+@mixin cinzel-light {
+  font-family: "cinzel";
+  font-weight: 100;
+}

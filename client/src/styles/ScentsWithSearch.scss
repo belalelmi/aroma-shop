@@ -1,0 +1,60 @@
+@import "../partials/fonts";
+@import "../partials/mixins";
+@import "../partials/variables";
+
+.scents-with-search {
+  background-color: #ffffff;
+  padding: 78px 0 74px 0;
+  width: 100%;
+
+  .heading {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+    color: #1d1d1d;
+    margin-bottom: 12px;
+  }
+
+  .subheading {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 300;
+    color: #000000b2;
+    margin-bottom: 30px;
+  }
+
+  .scent-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .empty-div {
+      width: 30%;
+      margin: 10px;
+    }
+  }
+
+  .view-all-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $tablet) {
+  .scents-with-search {
+    padding: 20px 0 25px 0;
+
+    .heading {
+      font-size: 18px;
+    }
+
+    .scent-blocks {
+      .empty-div {
+        width: 47%;
+        margin: 5px;
+      }
+    }
+  }
+}

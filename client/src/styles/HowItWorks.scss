@@ -1,0 +1,137 @@
+@import "../partials/fonts";
+@import "../partials/mixins";
+@import "../partials/variables";
+
+.how-it-works {
+  background-color: #f3f5f6;
+  padding: 48px 0 70px 0;
+  width: 100%;
+}
+
+.hiw-main-heading {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+  color: #1d1d1d;
+}
+
+.how-it-work-blocks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 50px;
+}
+
+.top-blue-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #112f59;
+  width: 67px;
+  height: 67px;
+  border-radius: 34px;
+  color: #e9b500;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: -33px;
+  z-index: 2;
+}
+
+.how-it-works-image {
+  object-fit: cover;
+  width: 350px;
+  height: 258px;
+}
+
+.hiw-sub-heading {
+  font-size: 25px;
+  color: $navy;
+  opacity: 0.9;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.hiw-paragraph {
+  margin-top: 15px;
+  // margin: 0 1rem;
+  font-size: 18px;
+  font-weight: 300;
+  color: #000000;
+  opacity: 0.6;
+  width: 80%;
+  text-align: center;
+}
+
+@media (min-width: $tablet) and (max-width: $tablet-pro) {
+  .how-it-works-image {
+    width: 285px;
+    height: 218px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .horizontal-scroll {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .how-it-works {
+    background-color: #f3f5f6;
+    padding: 20px 0 80px 0;
+    width: 100%;
+  }
+
+  .hiw-main-heading {
+    font-size: 18px;
+  }
+
+  .how-it-work-blocks {
+    justify-content: flex-start;
+  }
+
+  .hiw-block {
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 20px;
+  }
+
+  .hiw-block:nth-child(3) {
+    padding-right: 0px;
+  }
+
+  .top-blue-circle {
+    width: 50px;
+    height: 50px;
+    margin-bottom: -25px;
+    font-size: 10px;
+  }
+
+  .how-it-works-image {
+    width: 255px;
+    height: 207px;
+  }
+
+  .hiw-sub-heading {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .hiw-paragraph {
+    font-size: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 193px;
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.quantity-btns {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+
+  span {
+    display: flex;
+    align-items: center;
+    border-block: 1px solid #e9b500;
+    color: #112f59;
+    font-size: 22px;
+    height: 43px;
+    padding-inline: 20px;
+  }
+
+  button {
+    margin-top: 0;
+    height: 43px;
+    border: 1px solid #e9b500;
+    background-color: white;
+    color: #112f59;
+    width: 35px;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e9b500;
+    }
+    &:disabled {
+      background-color: #ebebeb;
+      border-color: #c4c4c4;
+      color: #c4c4c4;
+      cursor: default;
+    }
+  }
+  button:nth-child(1) {
+    border-radius: 45px 0 0 45px;
+  }
+  button:nth-last-child(1) {
+    border-radius: 0 45px 45px 0;
+  }
+}
+
+@media (max-width: $tablet) {
+  .quantity-btns {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+
+    span {
+      font-size: 14px;
+      height: 30px;
+    }
+
+    button {
+      height: 30px;
+    }
+  }
+}

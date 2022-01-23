@@ -1,0 +1,66 @@
+@import "../partials/fonts";
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "./Animations";
+
+.cart-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding-top: 119px;
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .continue-link {
+    font-size: 18px;
+    margin-bottom: 75px;
+    font-weight: 300;
+    color: $navy;
+    transition: all ease-in-out 0.3s;
+    border: 2px solid $gold;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+      background-color: $gold;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .cart-details {
+    padding-top: 30px;
+
+    .heading {
+      font-size: 17px;
+    }
+
+    .continue-link {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.quant {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  color: $navy;
+  font-size: 14px;
+  border: 1px solid $gold;
+}
+.quantity-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // background-color: red;
+  width: 70%;
+}

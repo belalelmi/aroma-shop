@@ -1,0 +1,91 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.scent {
+  background-color: #f3f5f6;
+  width: 30%;
+  margin: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .favorite-heart {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .scent-pic {
+    width: 85%;
+    height: 350px;
+    object-fit: cover;
+    align-self: center;
+  }
+
+  .content {
+    margin-inline: 20px;
+
+    h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1d1d1d;
+      margin-top: 10px;
+    }
+
+    h4 {
+      font-size: 13px;
+      font-weight: 300;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    .wrap-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  }
+
+  a {
+    align-self: center;
+  }
+  button {
+    width: 98px;
+    margin-block: 30px;
+    align-self: center;
+  }
+}
+
+@media (max-width: $tablet) {
+  .scent {
+    width: 47%;
+    margin: 5px;
+    margin-bottom: 10px;
+
+    .favorite-heart {
+      right: 10px;
+      top: 10px;
+    }
+
+    .scent-pic {
+      width: 90%;
+      height: 170px;
+      margin-top: 20px;
+      object-fit: contain;
+    }
+
+    .content {
+      margin-inline: 12px;
+
+      h4 {
+        font-size: 12px;
+      }
+
+      .wrap-container {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.custom-btn {
+  cursor: pointer;
+  min-width: 160px;
+  height: 43px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #112f59;
+  background-color: transparent;
+  border: 1px solid #f3b300;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: #f3b300;
+  }
+  &:disabled {
+    background-color: #ebebeb;
+    border-color: #c4c4c4;
+    color: #c4c4c4;
+    cursor: default;
+  }
+}
+
+.custom-blue-btn {
+  color: white;
+  background-color: #112f59;
+  border: 1px solid #112f59;
+
+  &:hover {
+    background-color: #051936;
+  }
+}
+
+@media (max-width: $tablet) {
+  .custom-btn {
+    min-width: 90px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 12px;
+    border-color: #d28a1c;
+  }
+
+  .custom-blue-btn {
+    color: white;
+    background-color: #112f59;
+    border: 1px solid #112f59;
+
+    &:hover {
+      background-color: #051936;
+    }
+  }
+}
+
+.select-btn {
+  cursor: pointer;
+  min-width: 50px;
+  margin-right: 1rem;
+  height: 43px;
+}

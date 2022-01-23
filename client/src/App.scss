@@ -1,0 +1,33 @@
+@import "./partials/_variables.scss";
+@import "./partials/_mixins.scss";
+@import "./partials/_fonts.scss";
+
+/********************* CSS RESETS AND DEFAULTS *********************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 16px;
+  background-color: white;
+  //   font-family: $font-regular;
+}
+
+body {
+  overflow-x: hidden;
+  //   background-color: blue;
+}

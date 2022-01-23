@@ -1,0 +1,144 @@
+@import "../partials/fonts";
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "./Animations";
+
+.footer {
+  width: 100%;
+  padding: 60px 0px;
+  background-color: #112f59;
+  // position: fixed;
+  // bottom: 0;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .footer-col {
+    width: 20%;
+    margin-inline: 20px;
+
+    .logo {
+      height: 18px;
+    }
+    .nav-logo {
+      color: #c4c4c4;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: -0.05em;
+      // margin-left: 40px;
+      @include cinzel-light;
+    }
+
+    .text-with-icon {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 24px;
+
+      img {
+        height: 18px;
+        margin-right: 10px;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    a {
+      color: white;
+      transition: all ease-in-out 0.3s;
+    }
+
+    a:hover {
+      color: $gold;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 15px;
+    }
+
+    .social-icon {
+      margin-top: 15px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+
+    .input-block {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      justify-content: flex-end;
+
+      .get-in-touch-input {
+        height: 34px;
+        width: 100%;
+        border-radius: 5px;
+        padding: 0 15px;
+        padding-right: 45px;
+        border: 0;
+      }
+
+      button {
+        position: absolute;
+        background-color: $gold;
+        border: 0;
+        border-radius: 5px;
+        height: 34px;
+        width: 34px;
+        transition: all ease-in-out 0.3s;
+        cursor: pointer;
+        margin-top: 0;
+
+        &:hover {
+          background-color: rgb(179, 133, 9);
+        }
+      }
+    }
+  }
+
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(3) {
+    width: 12%;
+  }
+}
+
+@media (max-width: $tablet) {
+  .footer {
+    padding: 40px 0px 10px 0px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .footer-col {
+      width: 90%;
+      margin-bottom: 40px;
+
+      .logo {
+        height: 20px;
+      }
+    }
+
+    .footer-col:nth-child(1) {
+      order: 4;
+      flex: 1;
+    }
+    .footer-col:nth-child(2) {
+      order: 2;
+      flex: 0.5;
+    }
+    .footer-col:nth-child(3) {
+      order: 3;
+      flex: 0.5;
+    }
+  }
+}

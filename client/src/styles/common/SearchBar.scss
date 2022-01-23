@@ -1,0 +1,32 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.search-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+//   padding-bottom: 50px;
+
+  .search-bar {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #c4c4c4;
+    border-radius: 20px;
+    padding: 10px 20px;
+
+    &:focus {
+      outline: none;
+      border-color: black;
+    }
+  }
+
+  img {
+    position: absolute;
+    right: 4%;
+  }
+}
+
+@media (max-width: $tablet) {
+}

@@ -1,0 +1,21 @@
+@import "../../partials/fonts";
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+
+.fruit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 8px;
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 9px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media (max-width: $tablet) {
+}

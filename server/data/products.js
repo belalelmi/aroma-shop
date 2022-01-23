@@ -1,0 +1,40 @@
+const products = [
+  {
+    name: "Blue De Chanel",
+    image: "/images/blue.jpg",
+    description: "Best cologne",
+    brand: "Chanel",
+    id: 1,
+    price: 29.99,
+    countInStock: 0,
+    rating: 2,
+    numReviews: 0,
+    category: "Elite",
+  },
+  {
+    name: "Armani Code",
+    image: "/images/armani.png",
+    description: "Top cologne",
+    brand: "Armani",
+    id: 2,
+    price: 29.99,
+    countInStock: 9,
+    rating: 3,
+    numReviews: 0,
+    category: "Premium",
+  },
+  {
+    name: "Dior Sauvage",
+    image: "/images/dior.jpeg",
+    description: "Best cologne",
+    brand: "Dior",
+    id: 3,
+    price: 29.99,
+    countInStock: 20,
+    rating: 1,
+    numReviews: 0,
+    category: "Elite",
+  },
+];
+
+export default products;

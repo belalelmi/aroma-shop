@@ -1,0 +1,126 @@
+@import "../partials/fonts";
+@import "../partials/mixins";
+@import "../partials/variables";
+
+.our-products {
+  background-color: #f3f5f6;
+  padding: 60px 0 80px 0;
+  width: 100%;
+
+  .main-heading {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 600;
+    color: #1d1d1d;
+  }
+
+  .our-products-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .block {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 30%;
+      margin-top: 50px;
+
+      .sub-heading {
+        font-size: 18px;
+        color: $navy;
+        opacity: 0.7;
+        font-weight: 500;
+        margin-top: 40px;
+      }
+
+      .paragraph {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 300;
+        color: #000000;
+        opacity: 0.6;
+        width: 206px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .our-products {
+    background-color: #f3f5f6;
+    padding: 20px 0 25px 0;
+    width: 100%;
+
+    .main-heading {
+      font-size: 18px;
+    }
+
+    .our-products-blocks {
+      flex-direction: column;
+
+      .block {
+        width: 100%;
+        margin-top: 20px;
+        .icon {
+          height: 25px;
+        }
+
+        .sub-heading {
+          font-size: 16px;
+          margin-top: 10px;
+        }
+
+        .paragraph {
+          font-size: 10px;
+          margin-top: 10px;
+          text-align: center;
+          width: 170px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .our-products {
+    background-color: #f3f5f6;
+    padding: 20px 0 25px 0;
+    width: 100%;
+    // background-color: red;
+
+    .main-heading {
+      font-size: 28px;
+      margin: 2rem 0;
+    }
+
+    .our-products-blocks {
+      flex-direction: row;
+
+      .block {
+        width: 100%;
+        margin-top: 30px;
+        .icon {
+          height: 50px;
+        }
+
+        .sub-heading {
+          font-size: 25px;
+          margin-top: 10px;
+          opacity: 0.9;
+          font-weight: 600;
+        }
+
+        .paragraph {
+          font-size: 18px;
+          margin-top: 10px;
+          text-align: center;
+          width: 80%;
+          // width: 170px;
+        }
+      }
+    }
+  }
+}

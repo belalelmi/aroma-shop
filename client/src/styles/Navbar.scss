@@ -1,0 +1,207 @@
+@import "../partials/fonts";
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "./Animations";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  background: linear-gradient(0deg, #112f59, #112f59), #112f59;
+  // background: linear-gradient(0deg, black, black), black;
+
+  .burger-menu {
+    display: none;
+  }
+
+  .logo {
+    height: 18px;
+    margin-left: 20px;
+    margin-left: 60px;
+  }
+  .nav-logo {
+    color: #c4c4c4;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+    margin-left: 40px;
+    @include cinzel-light;
+  }
+
+  .navigations {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-right: 60px;
+    margin-top: 5px;
+
+    .nav-link {
+      color: #ceccbf;
+      font-weight: 400;
+      font-size: 14px;
+      margin-left: 25px;
+
+      div {
+        background-color: #d28a1c;
+        background-color: $gold;
+        height: 3px;
+        margin-top: 5px;
+        width: 0%;
+        position: relative;
+        border-radius: 3px;
+        transition: all ease-in-out 0.3s;
+      }
+
+      &:hover {
+        div {
+          width: 100%;
+        }
+      }
+    }
+
+    .selected-nav-link {
+      color: #ceccbf;
+      font-weight: 400;
+      font-size: 14px;
+      margin-left: 25px;
+
+      div {
+        // background-color: #d28a1c;
+        background-color: $gold;
+        height: 3px;
+        margin-top: 5px;
+        width: 100%;
+        position: relative;
+        border-radius: 3px;
+        transition: all ease-in-out 0.3s;
+      }
+    }
+  }
+}
+
+.sliding-menu,
+.back-overlay {
+  display: none;
+}
+
+@media (max-width: $tablet) {
+  .navbar {
+    height: 60px;
+    background: transparent;
+    position: absolute;
+    z-index: 2;
+
+    .logo,
+    .navigations {
+      display: none;
+    }
+
+    .burger-menu {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 21px;
+      height: 21px;
+      margin-left: 35px;
+      transition: all ease-in-out 0.3s;
+      cursor: pointer;
+
+      div {
+        height: 3px;
+        width: 100%;
+        // background-color: white;
+        background-color: #fff;
+        mix-blend-mode: difference;
+        transition: all ease-in-out 0.3s;
+      }
+
+      &:hover {
+        div {
+          background-color: $gold;
+        }
+      }
+    }
+  }
+
+  .back-overlay {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    z-index: 3;
+  }
+
+  .sliding-menu {
+    display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: fixed;
+    width: 280px;
+    background-color: white;
+    height: 100vh;
+    z-index: 4;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+
+    .logo {
+      height: 16px;
+      margin-left: 25px;
+      margin-top: 25px;
+    }
+
+    .navigations {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-top: 50px;
+
+      .nav-link {
+        color: $navy;
+        font-weight: 500;
+        font-size: 16px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+
+        div {
+          background-color: #d28a1c;
+          height: 3px;
+          margin-top: 5px;
+          width: 0%;
+          position: relative;
+          border-radius: 3px;
+          transition: all ease-in-out 0.3s;
+        }
+
+        &:hover {
+          div {
+            width: 100%;
+          }
+        }
+      }
+
+      .selected-nav-link {
+        color: $navy;
+        font-weight: 500;
+        font-size: 16px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+
+        div {
+          background-color: #d28a1c;
+          height: 3px;
+          margin-top: 5px;
+          width: 100%;
+          position: relative;
+          border-radius: 3px;
+          transition: all ease-in-out 0.3s;
+        }
+      }
+    }
+  }
+}
