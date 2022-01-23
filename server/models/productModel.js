@@ -15,6 +15,15 @@ const reviewSchema = mongoose.Schema(
     timestamps: true,
   }
 );
+const contentSchema = mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    imgUrl: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const productSchema = mongoose.Schema(
   {
@@ -64,6 +73,7 @@ const productSchema = mongoose.Schema(
       required: true,
       default: 0,
     },
+    content: [contentSchema],
   },
   {
     timestamps: true,

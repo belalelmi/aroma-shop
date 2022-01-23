@@ -17,7 +17,7 @@ const Footer = () => {
   const Logo = () => (
     <Link to="/">
       {/* <img className="logo" src={logoSilver} alt="" /> */}
-      <h1 className="nav-logo">Aroma-Shop</h1>
+      <h1 className="nav-logo">Aroma Shop</h1>
     </Link>
   );
 

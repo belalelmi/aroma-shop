@@ -37,6 +37,7 @@ const ScentsWithSearch = () => {
                 rating={s.rating}
                 img={s.image}
                 category={s.category}
+                content={s.content}
               />
             ))}
           </div>
