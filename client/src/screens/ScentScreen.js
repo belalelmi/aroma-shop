@@ -3,6 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import DetailsTopSection from "../components/DetailsTopSection";
 import { listProductDetails } from "../actions/productActions";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
+
 
 const ScentScreen = () => {
   const params = useParams();
@@ -27,9 +30,10 @@ const ScentScreen = () => {
   return (
     <>
       {loading ? (
-        <div>Loading...</div>
+        <Loader />
+        // <div>Loading...</div>
       ) : error ? (
-        <div>{error}</div>
+        <Message variant='danger'>{error}</Message>
       ) : (
         <DetailsTopSection
           scent={product}
