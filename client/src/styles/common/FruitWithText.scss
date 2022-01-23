@@ -2,19 +2,25 @@
 @import "../../partials/mixins";
 @import "../../partials/variables";
 
-
 .fruit {
   display: flex;
+  flex-wrap: wrap;
+  flex: 1 0 33%;
   align-items: center;
-  flex-direction: column;
-  margin-right: 8px;
+  flex-direction: row;
+  // margin-right: 8px;
 
   p {
     margin-top: 5px;
-    margin-bottom: 0;
-    font-size: 9px;
+    margin-bottom: 1px;
+    font-size: 12px;
     color: rgba(0, 0, 0, 0.8);
+    margin-left: 5px;
   }
+}
+img {
+  width: 15%;
+  height: 95%;
 }
 
 @media (max-width: $tablet) {

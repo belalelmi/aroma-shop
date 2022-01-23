@@ -10,6 +10,45 @@ const products = [
     rating: 2,
     numReviews: 0,
     category: "Elite",
+    content: [
+      {
+        name: 'oud',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'pomegranate',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'leather',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'lychee',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'rose',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'oud',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'leather',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'wood',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'amber',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+
+    ]
   },
   {
     name: "Armani Code",
@@ -22,6 +61,45 @@ const products = [
     rating: 3,
     numReviews: 0,
     category: "Premium",
+    content: [
+      {
+        name: 'oud',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'pomegranate',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'leather',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'lychee',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'rose',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'oud',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'leather',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'wood',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'amber',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+
+    ]
   },
   {
     name: "Dior Sauvage",
@@ -34,7 +112,48 @@ const products = [
     rating: 1,
     numReviews: 0,
     category: "Elite",
+    content: [
+      {
+        name: 'oud',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'pomegranate',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'leather',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'lychee',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'rose',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'oud',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'leather',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'wood',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+      {
+        name: 'amber',
+        imgUrl: "/images/icons/lychee.svg",
+      },
+
+    ]
   },
+
+
 ];
 
 export default products;
