@@ -15,13 +15,13 @@ function App() {
     <>
       <Navbar />
       <Routes>
+        <Route path="/login" element={<LoginScreen />} />
         <Route exact path="/" element={<Home />} />
         <Route path="/AboutUs" element={<About />} />
         <Route path="/ExploreScents" element={<ExploreScreen />} />
         <Route path="/product/:id" element={<ScentScreen />} />
         <Route path="/plans" element={<PricingScreen />} />
         <Route path="/cart/:id/*" element={<CartScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
       </Routes>
       <Footer />
     </>
