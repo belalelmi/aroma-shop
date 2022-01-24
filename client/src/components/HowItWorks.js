@@ -11,16 +11,16 @@ const HowItWorks = () => {
         "Explore our collection of Blue de Chanel, Armani Code, some Jo Malone, and so much more ",
     },
     {
-      heading: "Activate your subscription",
+      heading: "Confirm your purchase",
       image: howItWorks2,
       paragraph:
-        "Jump on board to the best monthly cologne subscription around. Switch up your scent to match your energy",
+        "Your order will arrive within 3 business days thanks to our partnerships with shiping companies worldwide!",
     },
     {
       heading: "Receive your Fragrance",
       image: howItWorks3,
       paragraph:
-        "At Aroma Shop believe in fast delivery and expert pricing. Things are feeling fresh. Right at your doorstep.",
+        "At Aroma Shop, we believe in fast delivery and expert pricing. It just never smelt better.",
     },
   ];
 

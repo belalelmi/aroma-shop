@@ -63,7 +63,7 @@ const Footer = () => {
         <Logo />
         <TextWithIcon
           icon={locationMark}
-          text="345A Lilac S.t Calhoun, GA 30701"
+          text="100 Lighthouse Ave, NB 30701"
         />
         <TextWithIcon
           icon={phone}
@@ -72,8 +72,8 @@ const Footer = () => {
         />
         <TextWithIcon
           icon={mail}
-          text="yourmail@gmail.com"
-          href="mailto:yourmail@gmail.com"
+          text="aromashop@aroma.com"
+          href="mailto:aromashop@aroma.com"
         />
       </div>
 
@@ -83,7 +83,7 @@ const Footer = () => {
         <MenuItem label="Pricing Plans" path="/" />
         <MenuItem label="About Us" path="/AboutUs" />
         <MenuItem label="Cart" path="/" />
-        <MenuItem label="Get Subscription" path="/" />
+
       </div>
 
       <div className="footer-col">

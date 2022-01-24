@@ -14,18 +14,21 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Routes>
-        <Route path="/login" element={<LoginScreen />} />
-        <Route exact path="/" element={<Home />} />
+        <Route path="/login" element={<LoginScreen location={window.location} />} />
         <Route path="/AboutUs" element={<About />} />
+        <Route path="/cart/:id/*" element={<CartScreen />} />
         <Route path="/ExploreScents" element={<ExploreScreen />} />
         <Route path="/product/:id" element={<ScentScreen />} />
         <Route path="/plans" element={<PricingScreen />} />
-        <Route path="/cart/:id/*" element={<CartScreen />} />
+        <Route path="/" element={<Home />} />
       </Routes>
+
       <Footer />
     </>
   );
 }
 
 export default App;
+
