@@ -25,12 +25,11 @@ const OurPlans = () => {
             $24.99 <span className="per-month">/ month</span>
           </h2>
           <ListItem item="First Item" />
-          <ListItem item="First Item" />
-          <ListItem item="First Item" />
-          <ListItem item="First Item" />
+          <ListItem item="Second Item" />
+          <ListItem item="Third Item" />
+          <ListItem item="Fourth Item" />
 
           <CustomButton text="Select Plan" />
-          {/* <button className='select-plan-btn'>Select Plan</button> */}
         </div>
         <div className="plan" style={{ borderColor: "#AF9500" }}>
           <div className="white-gap" />
@@ -42,12 +41,11 @@ const OurPlans = () => {
           </h2>
 
           <ListItem item="First Item" />
-          <ListItem item="First Item" />
-          <ListItem item="First Item" />
-          <ListItem item="First Item" />
+          <ListItem item="Second Item" />
+          <ListItem item="Third Item" />
+          <ListItem item="Fourth Item" />
 
           <CustomButton text="Select Plan" />
-          {/* <button className='select-plan-btn'>Select Plan</button> */}
         </div>
 
         <div className="plan" style={{ borderColor: "#112f59" }}>
@@ -60,12 +58,11 @@ const OurPlans = () => {
           </h2>
 
           <ListItem item="First Item" />
-          <ListItem item="First Item" />
-          <ListItem item="First Item" />
-          <ListItem item="First Item" />
+          <ListItem item="Second Item" />
+          <ListItem item="Third Item" />
+          <ListItem item="Fourth Item" />
 
           <CustomButton text="Select Plan" />
-          {/* <button className='select-plan-btn'>Select Plan</button> */}
         </div>
       </div>
     </div>
