@@ -67,8 +67,8 @@ const Footer = () => {
         />
         <TextWithIcon
           icon={phone}
-          text="+1-202-555-0158"
-          href="tel:+1-202-555-0158"
+          text="+1-102-101-0102"
+          href="tel:+1-416-416-4166"
         />
         <TextWithIcon
           icon={mail}
@@ -79,10 +79,9 @@ const Footer = () => {
 
       <div className="footer-col">
         <h3>Useful Links</h3>
-        <MenuItem label="Explore Services" path="/ExploreScents" />
-        <MenuItem label="Pricing Plans" path="/" />
+        <MenuItem label="Explore Scents" path="/ExploreScents" />
         <MenuItem label="About Us" path="/AboutUs" />
-        <MenuItem label="Cart" path="/" />
+        <MenuItem label="Cart" path="/cart/id*" />
 
       </div>
 
