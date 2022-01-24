@@ -1,0 +1,47 @@
+// @import "./common/CustomButton.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+// @import "../bootstrap.min1.css";
+
+.login-form {
+  // color: red;
+  min-height: 80vh;
+  background-color: #ffffff;
+  // padding: 500px 0 74px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .bar {
+    padding: 10px;
+  }
+
+  // Button {
+
+  // }
+}
+.seperator {
+  padding: 20px;
+}
+
+#signUp {
+  padding-bottom: 10px;
+}
+@media (max-width: 720px) {
+  .login-form {
+    min-height: 100vh;
+    padding: 20px 0 25px 0;
+
+    .heading {
+      font-size: 18px;
+    }
+
+    .scent-blocks {
+      .empty-div {
+        width: 47%;
+        margin: 5px;
+      }
+    }
+  }
+}
