@@ -8,7 +8,7 @@ import "../styles/ProfileScreen.scss"
 
 // import FormContainer from '../components/FormContainer'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
-
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location }) => {
   const [name, setName] = useState('')
@@ -39,7 +39,8 @@ const ProfileScreen = ({ location }) => {
     if (!userInfo) {
       navigate('/login')
     } else {
-      if (!user.name) {
+      if (!user.name || success) {
+        dispatch({ type: USER_UPDATE_PROFILE_RESET })
         dispatch(getUserDetails('profile'))
       } else {
         // console.log(user)
@@ -47,7 +48,7 @@ const ProfileScreen = ({ location }) => {
         setEmail(user.email)
       }
     }
-  }, [dispatch, navigate, userInfo, user])
+  }, [dispatch, navigate, userInfo, user, success])
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -75,7 +76,7 @@ const ProfileScreen = ({ location }) => {
       <Form onSubmit={submitHandler} >
 
         <Form.Group className='group' controlId='name'>
-          <Form.Label>Name</Form.Label>
+        <Form.Label>Username</Form.Label>
           <Form.Control
             className="bar"
             type='name'
