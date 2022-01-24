@@ -1,107 +1,87 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { logoSilver, logoGold } from "../utils/Lists";
 import "../styles/Navbar.scss";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { LinkContainer } from 'react-router-bootstrap'
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+// import { logoSilver, logoGold } from "../utils/Lists";
+import { logout } from '../actions/userActions'
 
-const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [expand, setExpand] = useState(false);
+const Header = () => {
+  const dispatch = useDispatch()
 
-  const links = [
-    { label: "Home", path: "/" },
-    { label: "Explore Scents", path: "/ExploreScents" },
-    // { label: "Pricing Plans", path: "/plans" },
-    { label: "About Us", path: "/AboutUs" },
-    { label: "Cart", path: "/cart/id*" },
-    { label: "Login", path: "/login" },
-  ];
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
 
-  const openMenu = () => {
-    setShowMenu(true);
-    setExpand(true);
-  };
-
-  const closeMenu = () => {
-    setShowMenu(false);
-    setTimeout(() => {
-      setExpand(false);
-    }, 400);
-  };
-
-  const NavbarLogo = ({ logo }) => (
-    <Link to="/" onClick={closeMenu}>
-      {/* <img className="logo" src={logo} alt="" /> */}
-      <h1 className="nav-logo">Aroma Shop</h1>
-    </Link>
-  );
-
-  const MenuItem = ({ label, path, additionalClasses, style }) => (
-    <NavLink
-      className={`nav-link ${additionalClasses}`}
-      // activeclassName="selected-nav-link"
-      to={path}
-      // exact={`${exact}`}
-      onClick={closeMenu}
-      style={style}
-    >
-      <p>{label}</p>
-      <div />
-    </NavLink>
-  );
-
-  const Navigations = ({ additionalClasses = "" }) => {
-    let inc = 0;
-    return (
-      <div className="navigations">
-        {links.map((item, index) => (
-          <MenuItem
-            key={index}
-            label={item.label}
-            path={item.path}
-            additionalClasses={additionalClasses}
-            style={{ animationDelay: `${(inc += 0.09)}s` }}
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const BurgerMenu = () => (
-    <div className="burger-menu" onClick={openMenu}>
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  );
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
 
   return (
-    <>
-      <div className="navbar">
-        <NavbarLogo logo={logoSilver} />
-        <Navigations />
-        <BurgerMenu />
-      </div>
+    <header>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+        <Container>
+          <LinkContainer to='/'>
+            <Navbar.Brand>Aroma Shop</Navbar.Brand>
+          </LinkContainer>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
 
-      {expand && (
-        <>
-          <div
-            className={`back-overlay ${showMenu ? "fade-in" : "fade-out"}`}
-            onClick={closeMenu}
-          />
-          <div
-            className={`sliding-menu ${showMenu ? "slide-in-left" : "slide-out-left"
-              }`}
-          >
-            <NavbarLogo logo={logoGold} />
-            <Navigations
-              additionalClasses={showMenu ? "slide-up" : "slide-down"}
-            />
-          </div>
-        </>
-      )}
-    </>
-  );
-};
+            <Nav className='ml-auto'>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  Home
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/ExploreScents'>
+                <Nav.Link>
+                  Explore Scents
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/AboutUs'>
+                <Nav.Link>
+                  About Us
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/cart/id*'>
+                <Nav.Link>
+                  <i className='fas fa-shopping-cart'></i> Cart
+                </Nav.Link>
+              </LinkContainer>
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id='username'>
+                  <LinkContainer to='/profile'>
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to='/login'>
+                  <Nav.Link>
+                    <i className='fas fa-user'></i> Sign In
+                  </Nav.Link>
+                </LinkContainer>
+              )}
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title='Admin' id='adminmenu'>
+                  <LinkContainer to='/admin/userlist'>
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/productlist'>
+                    <NavDropdown.Item>Products</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/orderlist'>
+                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </header>
+  )
+}
 
-export default Navbar;
+export default Header
