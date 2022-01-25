@@ -10,7 +10,8 @@ const orderSchema = mongoose.Schema(
     orderItems: [
       {
         name: { type: String, required: true },
-        qty: { type: Number, required: true },
+        //CHANGED qty 'required = false' 
+        qty: { type: Number, required: false },
         image: { type: String, required: true },
         price: { type: Number, required: true },
         product: {

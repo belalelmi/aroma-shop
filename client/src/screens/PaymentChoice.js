@@ -20,14 +20,14 @@ const PaymentChoiceScreen = () => {
     navigate('/login/shipping')
   }
 
-  const [paymentChoice, setPaymentChoice] = useState('PayPal');
+  const [paymentMethod, setPaymentMethod] = useState('PayPal');
 
   const dispatch = useDispatch();
 
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(savePaymentChoice(paymentChoice))
+    dispatch(savePaymentChoice(paymentMethod))
     navigate('/placeorder')
   }
 
@@ -48,20 +48,20 @@ const PaymentChoiceScreen = () => {
               type='radio'
               label={<i class="fab fa-cc-paypal"> PayPal & Credit Card</i>}
               id='PayPal'
-              name='paymentChoice'
+              name='paymentMethod'
               value='PayPal'
               checked
-              onChange={(e) => setPaymentChoice(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             {<br></br>}
             <Form.Check
               type='radio'
               label={<i class="fab fa-ethereum"> Ethereum</i>}
               id='ETH'
-              name='paymentChoice'
+              name='paymentMethod'
               className='ether'
               value='Ethereum'
-              onChange={(e) => setPaymentChoice(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             >
             </Form.Check>
 
