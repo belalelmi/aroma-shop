@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import CustomButton from "../components/common/CustomButton"
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckOutTracker from '../components/CheckOutTracker'
+import { createOrder } from '../actions/orderActions'
 import '../styles/PlaceOrder.scss'
 
 const PlaceOrderScreen = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const cart = useSelector(state => state.cart)
 
   //calculate prices 
@@ -24,11 +28,26 @@ const PlaceOrderScreen = () => {
     Number(cart.taxPrice)
   ).toFixed(2)
 
+  const orderCreate = useSelector(state => state.orderCreate)
+  const { order, success, error } = orderCreate
 
-
+  useEffect(() => {
+    if (success) {
+      navigate(`/order/${order._id}`)
+    }
+    // eslint-disable-next-line
+  }, [navigate, success])
 
   const placeOrderHandler = () => {
-    console.log('kkl')
+    dispatch(createOrder({
+      orderItems: cart.cartItems,
+      shippingAddress: cart.shippingAddress,
+      paymentMethod: cart.paymentMethod,
+      itemsPrice: cart.itemsPrice,
+      shippingPrice: cart.shippingPrice,
+      taxPrice: cart.taxPrice,
+      totalPrice: cart.totalPrice,
+    }))
   }
 
 
@@ -55,7 +74,7 @@ const PlaceOrderScreen = () => {
               <ListGroup.Item>
                 <h3>Payment Method</h3>
                 <strong>Method: </strong>
-                {cart.paymentChoice}
+                {cart.paymentMethod}
               </ListGroup.Item>
 
               <ListGroup.Item>
@@ -123,11 +142,10 @@ const PlaceOrderScreen = () => {
                   </Row>
                 </ListGroup.Item>
 
-                {/*<ListGroup.Item>
-                  {error && <Message variant='danger'>{error}</Message>}
-                </ListGroup.Item> */}
-
                 <ListGroup.Item>
+                  <ListGroup.Item>
+                    {error && <Message variant='danger'>{error}</Message>}
+                  </ListGroup.Item>
                   <CustomButton
                     type='button'
                     disabled={cart.cartItems === 0}

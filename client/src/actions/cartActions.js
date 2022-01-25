@@ -21,6 +21,7 @@ export const addToCart = (id, quantity) => async (dispatch, getState) => {
       rating: data.rating,
       category: data.category,
       quantity,
+      // qty: quantity
     },
   });
 
@@ -51,5 +52,5 @@ export const savePaymentChoice = (data) => (dispatch) => {
     payload: data,
   })
 
-  localStorage.setItem('paymentChoice', JSON.stringify(data))
+  localStorage.setItem('paymentMethod', JSON.stringify(data))
 }
