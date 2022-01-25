@@ -13,8 +13,8 @@ const Hero = () => {
             Discover your <span className="info__span">Perfect Scent</span>
           </h1>
           <h2 className="info__text slide-up">
-            Enjoy the best scents from around the world through one time
-            purchases or a subscription.
+            Enjoy the best scents from around the world through simple one time
+            purchases.
             <br />
             {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. */}
           </h2>
