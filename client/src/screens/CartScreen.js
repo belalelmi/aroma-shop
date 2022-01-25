@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   useParams,
-  useNavigate,
+  // useNavigate,
   useSearchParams,
   Link,
 } from "react-router-dom";
@@ -20,7 +20,7 @@ import "../styles/CartDetails.scss";
 
 const CartScreen = () => {
   const params = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
   const productId = params.id;
@@ -41,9 +41,9 @@ const CartScreen = () => {
     return Math.round(z * 100) / 100;
   };
 
-  const checkoutHandler = () => {
-    navigate(`/login?redirect=shipping`);
-  };
+  // const checkoutHandler = () => {
+  //   navigate(`/login?redirect=shipping`);
+  // };
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };

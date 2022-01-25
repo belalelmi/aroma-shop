@@ -107,7 +107,7 @@ const RegisterScreen = ({ location }) => {
               ></Form.Control>
             </Form.Group>
 
-            <div class="seperator"></div>
+            <div className="seperator"></div>
             <Button type="submit" disabled={!validateForm()} variant='warning'>
               Register
             </Button>

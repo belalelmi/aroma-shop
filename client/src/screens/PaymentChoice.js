@@ -46,7 +46,7 @@ const PaymentChoiceScreen = () => {
 
             <Form.Check
               type='radio'
-              label={<i class="fab fa-cc-paypal"> PayPal & Credit Card</i>}
+              label={<i className="fab fa-cc-paypal"> PayPal & Credit Card</i>}
               id='PayPal'
               name='paymentMethod'
               value='PayPal'
@@ -56,7 +56,7 @@ const PaymentChoiceScreen = () => {
             {<br></br>}
             <Form.Check
               type='radio'
-              label={<i class="fab fa-ethereum"> Ethereum</i>}
+              label={<i className="fab fa-ethereum"> Ethereum</i>}
               id='ETH'
               name='paymentMethod'
               className='ether'
@@ -73,7 +73,7 @@ const PaymentChoiceScreen = () => {
           style={{ margin: "1rem auto" }}>
           Continue
         </CustomButton>
-      </Form>
+      </Form >
 
     </FormContainer >
   )
