@@ -8,7 +8,7 @@ const OurProducts = () => {
       heading: "Reward Referral",
       icon: dollar,
       paragraph:
-        "Help your friends smell better and boost confidence. Refer 5 friends to subscribe and enjoy an instant FREE upgrade to our Elite level!",
+        "Help your family & friends enjoy the magic of good scents. Refer 5 friends and we will include a FREE sample scent with your next order!",
     },
     {
       heading: "Free Shipping",
@@ -20,7 +20,7 @@ const OurProducts = () => {
       heading: "Authentic Collection",
       icon: bestCollection,
       paragraph:
-        "A collection and an assortment of high-class name-brand luxury colognes hand picked with a variety of scents for the right occasion.",
+        "A collection and an assortment of high-class name-brand luxury colognes hand picked with a variety of scents for every occasion.",
     },
   ];
 

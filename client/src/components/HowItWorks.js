@@ -1,5 +1,5 @@
 import React from "react";
-import { howItWorks1, howItWorks2, howItWorks3 } from "../utils/Lists";
+import { howItWorks1, howItWorks2, howItWorks3, howItWorks4 } from "../utils/Lists";
 import "../styles/HowItWorks.scss";
 
 const HowItWorks = () => {
@@ -12,15 +12,15 @@ const HowItWorks = () => {
     },
     {
       heading: "Confirm your purchase",
-      image: howItWorks2,
+      image: howItWorks4,
       paragraph:
-        "Your order will arrive within 3 business days thanks to our partnerships with shiping companies worldwide!",
+        "Within 48Hrs you will be able to switch up your scent to match your energy thanks to our partnerships with shiping companies worldwide!",
     },
     {
       heading: "Receive your Fragrance",
       image: howItWorks3,
       paragraph:
-        "At Aroma Shop, we believe in fast delivery and expert pricing. It just never smelt better.",
+        "At Aroma Shop, we believe in fast delivery and expert pricing. Good deals never smelt any better.",
     },
   ];
 

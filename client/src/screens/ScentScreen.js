@@ -25,7 +25,7 @@ const ScentScreen = () => {
     quantity < product.countInStock ? () => setQuantity(quantity + 1) : null;
 
   const handleAddToCart = () => {
-    navigate(`/cart/${params.id}?qty=${quantity}`);
+    navigate(`/cart/${params.id}?quantity=${quantity}`);
   };
   return (
     <>

@@ -14,6 +14,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentChoiceScreen from "./screens/PaymentChoice";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/order/:id" element={<OrderScreen />} />
         <Route path="/login/shipping" element={<ShippingScreen />} />
         <Route path="/payment" element={<PaymentChoiceScreen />} />
         <Route path="/placeorder" element={<PlaceOrderScreen />} />

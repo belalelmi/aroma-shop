@@ -25,13 +25,13 @@ const CartScreen = () => {
   const dispatch = useDispatch();
   const productId = params.id;
 
-  const qty = Number(searchParams.get("qty")) || 1;
+  const quantity = Number(searchParams.get("quantity")) || 1;
   useEffect(() => {
     if (productId) {
-      dispatch(addToCart(productId, qty));
+      dispatch(addToCart(productId, quantity));
       // navigate("/cart");
     }
-  }, [dispatch, productId, qty]);
+  }, [dispatch, productId, quantity]);
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -64,9 +64,8 @@ const CartScreen = () => {
       ) : (
         <div className="cart-details">
           <h1 className="heading slide-up">Your Cart</h1>
-          <Link to="/ExploreScents" className="continue-link slide-up">
-            Continue Shopping
-          </Link>
+
+
 
           {cartItems?.map((item) => (
             <div className="cart-item">
@@ -155,16 +154,21 @@ const CartScreen = () => {
                   style={{ margin: "1rem auto" }}
                   onClick={() => removeFromCartHandler(item.product)}
                 />
-                <CustomButton
-                  text="Proceed to check out"
-                  onClick={checkoutHandler}
-                  style={{ margin: "1rem auto" }}
-                />
+
               </div>
             </div>
           ))}
+          <div className="cart-items">
+            <Link to="/ExploreScents" className="continue-link slide-up">
+              Continue Shopping
+            </Link>
+            <Link to="/login?redirect=shipping" className="continue-link slide-up">
+              Proceed to Checkout
+            </Link>
+          </div>
         </div>
-      )}
+      )
+      }
     </>
   );
 };
