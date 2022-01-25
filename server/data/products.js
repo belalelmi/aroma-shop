@@ -7,7 +7,7 @@ const products = [
     id: 1,
     price: 29.99,
     countInStock: 0,
-    rating: 2,
+    rating: 4.5,
     numReviews: 0,
     category: "Elite",
     content: [
@@ -58,7 +58,7 @@ const products = [
     id: 2,
     price: 29.99,
     countInStock: 9,
-    rating: 3,
+    rating: 4,
     numReviews: 0,
     category: "Premium",
     content: [
@@ -109,7 +109,7 @@ const products = [
     id: 3,
     price: 29.99,
     countInStock: 20,
-    rating: 1,
+    rating: 5,
     numReviews: 0,
     category: "Elite",
     content: [

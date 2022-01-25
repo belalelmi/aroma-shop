@@ -25,6 +25,7 @@ import downArrow from "../assets/icons/downArrow.svg";
 import howItWorks1 from "../assets/pics/howItWorks1.png";
 import howItWorks2 from "../assets/pics/howItWorks2.png";
 import howItWorks3 from "../assets/pics/howItWorks3.png";
+import howItWorks4 from "../assets/pics/howitworks4.jpg";
 import product from "../assets/pics/product.png";
 import ourStoryPic from "../assets/pics/ourStory.png";
 import leoPic from "../assets/pics/leo.png";
@@ -47,6 +48,7 @@ export {
   howItWorks1,
   howItWorks2,
   howItWorks3,
+  howItWorks4,
   product,
   lychee,
   ourStoryPic,
