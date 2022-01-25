@@ -60,7 +60,7 @@ const LoginScreen = ({ location }) => {
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <div class="seperator"></div>
+            <div className="seperator"></div>
 
             <Form.Group className='group' controlId='password'>
               <Form.Label>Password</Form.Label>
@@ -72,7 +72,7 @@ const LoginScreen = ({ location }) => {
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <div class="seperator"></div>
+            <div className="seperator"></div>
             <Button type="submit" disabled={!validateForm()} variant='warning'>
               Sign In
             </Button>
