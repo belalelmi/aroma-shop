@@ -1,5 +1,5 @@
 import React from "react";
-import { howItWorks1, howItWorks2, howItWorks3, howItWorks4 } from "../utils/Lists";
+import { howItWorks1, howItWorks3, howItWorks4 } from "../utils/Lists";
 import "../styles/HowItWorks.scss";
 
 const HowItWorks = () => {
