@@ -12,8 +12,8 @@ const ExploreScentsHero = () => {
         <span>Perfect Match</span>
       </h1>
       <p className="slide-up">
-        Lorem Ipsum is simply dummy text of the printing and typesetting Lorem
-        Ipsum is simply dummy text of the printing and typesetting industry
+        We partner directly with top brands & wholesalers and only sell 100%
+        authentic products
       </p>
     </div>
   );
