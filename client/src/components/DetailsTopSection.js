@@ -30,37 +30,37 @@ const DetailsTopSection = ({
       <div>
         <h2>Top Notes</h2>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Geranium</p>
         </div>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Lavender</p>
         </div>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Tonka Bean</p>
         </div>
       </div>
       <div>
         <h2>Heart Notes</h2>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Leather</p>
         </div>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Bergamont</p>
         </div>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Apple</p>
         </div>
       </div>
       <div>
         <h2>Base Notes</h2>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Grapefruit</p>
         </div>
         <div className="circle-with-text">
           <div className="yellow-circle" /> <p>Pink pepper</p>
         </div>
         <div className="circle-with-text">
-          <div className="yellow-circle" /> <p>Pink pepper</p>
+          <div className="yellow-circle" /> <p>Orange Blossom</p>
         </div>
       </div>
     </div>
