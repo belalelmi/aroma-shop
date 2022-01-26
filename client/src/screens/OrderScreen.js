@@ -96,7 +96,7 @@ const OrderScreen = () => {
                   <strong>Name: </strong> {order.user.name}
                 </p>
                 <p>
-                  <strong>Emial: </strong> <a className='link' href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
+                  <strong>Email: </strong> <a className='link' href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
                 <p>
                   <strong>Address:</strong>
                   {order.shippingAddress.address}, {order.shippingAddress.city},{' '}

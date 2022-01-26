@@ -30,6 +30,16 @@ const PaymentChoiceScreen = () => {
     dispatch(savePaymentChoice(paymentMethod))
     navigate('/placeorder')
   }
+  //   <Form.Check
+  //   type='radio'
+  //   label={<i className="fab fa-ethereum"> Ethereum</i>}
+  //   id='ETH'
+  //   name='paymentMethod'
+  //   className='ether'
+  //   value='Ethereum'
+  //   onChange={(e) => setPaymentMethod(e.target.value)}
+  // >
+  // </Form.Check>
 
 
   return (
@@ -54,16 +64,6 @@ const PaymentChoiceScreen = () => {
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             {<br></br>}
-            <Form.Check
-              type='radio'
-              label={<i className="fab fa-ethereum"> Ethereum</i>}
-              id='ETH'
-              name='paymentMethod'
-              className='ether'
-              value='Ethereum'
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            >
-            </Form.Check>
 
           </Col>
         </Form.Group>
