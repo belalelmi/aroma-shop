@@ -1,22 +1,25 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import CustomButton from "../components/common/CustomButton"
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Form, Button } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
+// import { components } from "react-select";
 import { LinkContainer } from 'react-router-bootstrap'
+import CustomButton from "../components/common/CustomButton"
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
+import Example from '../components/CustomDropdown'
 import { listProductDetails, updateProduct } from '../actions/productActions'
-// import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
-
-
+import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
+import '../styles/CustomDropdown.scss'
 
 const ProductEditScreen = () => {
   const params = useParams()
   const productId = params.id
   const navigate = useNavigate()
+
+
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
@@ -32,7 +35,7 @@ const ProductEditScreen = () => {
   const dispatch = useDispatch()
 
   const productDetails = useSelector((state) => state.productDetails)
-  const { product } = productDetails
+  const { loading, error, product } = productDetails
 
   const productUpdate = useSelector((state) => state.productUpdate)
   console.log(productUpdate)
@@ -43,52 +46,86 @@ const ProductEditScreen = () => {
   } = productUpdate
 
   useEffect(() => {
-    // if (successUpdate) {
-    // dispatch({ type: PRODUCT_UPDATE_RESET })
-    // navigate('/admin/productlist')
-    // } else {
-    if (!product.name || product._id !== productId) {
-      dispatch(listProductDetails(productId))
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET })
+      navigate('/admin/productlist')
     } else {
-      setName(product.name)
-      setPrice(product.price)
-      setImage(product.image)
-      setBrand(product.brand)
-      setCategory(product.category)
-      setContent(product.content)
-      setCountInStock(product.countInStock)
-      setDescription(product.description)
+      if (!product.name || product._id !== productId) {
+        dispatch(listProductDetails(productId))
+      } else {
+        setName(product.name)
+        setPrice(product.price)
+        setImage(product.image)
+        setBrand(product.brand)
+        setCategory(product.category)
+        setContent(product.content)
+        setCountInStock(product.countInStock)
+        setDescription(product.description)
+      }
     }
-    // }
-  }, [dispatch, productId, product])
+  }, [dispatch, navigate, productId, product, successUpdate])
+
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0]
+    const formData = new FormData()
+    formData.append('image', file)
+    setUploading(true)
+
+    try {
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }
+
+      const { data } = await axios.post('/api/upload', formData, config)
+
+      setImage(data)
+      setUploading(false)
+    } catch (error) {
+      console.error(error)
+      setUploading(false)
+    }
+  }
 
   const submitHandler = (e) => {
     e.preventDefault()
-    //update product
+    dispatch(updateProduct({
+      _id: productId,
+      name,
+      price,
+      image,
+      brand,
+      content,
+      category,
+      description,
+      countInStock,
+    }))
+
   }
 
-  // loading ? (
-  //   <Loader />
-  // ) : error ? (
-  //   <Message variant='danger'>{error}</Message>
-  // ) : (
   return (
     <>
       <div className='bots'>
-        <LinkContainer to={'/admin/userlist'}>
-          <CustomButton style={{ padding: '80px' }} variant='light' className='btn-sm'>
+        <LinkContainer to={'/admin/productlist'}>
+          <CustomButton style={{ padding: '70px' }} variant='light' className='btn-sm'>
             Back To Product List
           </CustomButton>
         </LinkContainer>
       </div>
 
-
       <FormContainer>
-        <h1>Edit Product</h1>
-        {
+        <h2>Edit Product</h2>
+        {loadingUpdate && <Loader />}
+        {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant='danger'>{error}</Message>
+        ) : (
 
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+            <Form.Group className='controler' controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
@@ -98,7 +135,7 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='Price'>
+            <Form.Group className='controler' controlId='Price'>
               <Form.Label>Price</Form.Label>
               <Form.Control
                 type='number'
@@ -108,17 +145,25 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='image'>
+            <Form.Group className='controler' controlId='image'>
               <Form.Label>Image</Form.Label>
+
               <Form.Control
                 type='text'
-                placeholder='Enter Image'
+                placeholder='Enter image url'
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
+              <Form.Control
+                id='image'
+                label='Choose File'
+                type='file'
+                onChange={uploadFileHandler}
+              ></Form.Control>
+              {uploading && <Loader />}
             </Form.Group>
 
-            <Form.Group controlId='brand'>
+            <Form.Group className='controler' controlId='brand'>
               <Form.Label>Brand</Form.Label>
               <Form.Control
                 type='text'
@@ -128,7 +173,7 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='countInStock'>
+            <Form.Group className='controler' controlId='countInStock'>
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
                 type='number'
@@ -138,7 +183,7 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='category'>
+            <Form.Group className='controler' controlId='category'>
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type='text'
@@ -148,7 +193,12 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='description'>
+            <Form.Group className='controler' controlId='contents'>
+              <Form.Label>Fragrance Notes</Form.Label>
+              <Example onChange={(e) => setContent(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group className='controler' controlId='description'>
               <Form.Label>Description</Form.Label>
               <Form.Control
                 type='text'
@@ -157,13 +207,15 @@ const ProductEditScreen = () => {
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
+            <br></br>
 
             <CustomButton type='submit' variant='primary'>
               Update
             </CustomButton>
           </Form>
-        }
+        )}
       </FormContainer>
+
     </>
   )
 }
