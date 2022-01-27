@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 // import { logoSilver, logoGold } from "../utils/Lists";
+import SearchBox from './SearchBox'
+// import SearchBar from "./common/SearchBar";
 import { logout } from '../actions/userActions'
+// import SearchBar from "./common/SearchBar";
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -63,6 +66,7 @@ const Header = () => {
                   </Nav.Link>
                 </LinkContainer>
               )}
+
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title='Admin' id='adminmenu'>
                   <LinkContainer to='/admin/userlist'>
