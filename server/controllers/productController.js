@@ -46,12 +46,11 @@ const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: "Product Name",
     image: "/images/product.png",
-    description: "Best ever",
+    description: "Description",
     brand: "Brand",
     user: req.user._id,
     price: 0,
     countInStock: 0,
-    rating: 5,
     numReviews: 0,
     category: "Category",
     content: [
@@ -101,7 +100,6 @@ const updateProduct = asyncHandler(async (req, res) => {
     brand,
     price,
     countInStock,
-    rating,
     numReviews,
     category,
     content,
@@ -127,5 +125,53 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 })
 
+// @desc    Create new review
+// @route   POST /api/products/:id/reviews
+// @access  Private
+const createProductReview = asyncHandler(async (req, res) => {
+  const { rating, comment } = req.body
 
-export { getProducts, getProductById, deleteProduct, createProduct, updateProduct };
+  const product = await Product.findById(req.params.id)
+
+  if (product) {
+    const alreadyReviewed = product.reviews.find(
+      (r) => r.user.toString() === req.user._id.toString()
+    )
+
+    if (alreadyReviewed) {
+      res.status(400)
+      throw new Error('Product already reviewed')
+    }
+
+    const review = {
+      name: req.user.name,
+      rating: Number(rating),
+      comment,
+      user: req.user._id,
+    }
+
+    product.reviews.push(review)
+
+    product.numReviews = product.reviews.length
+
+    product.rating =
+      product.reviews.reduce((acc, item) => item.rating + acc, 0) /
+      product.reviews.length
+
+    await product.save()
+    res.status(201).json({ message: 'Review added' })
+  } else {
+    res.status(404)
+    throw new Error('Product not found')
+  }
+})
+
+
+export {
+  getProducts,
+  getProductById,
+  deleteProduct,
+  createProduct,
+  updateProduct,
+  createProductReview
+};

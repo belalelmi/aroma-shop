@@ -18,7 +18,7 @@ const reviewSchema = mongoose.Schema(
 const contentSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
-    imgUrl: { type: String, required: true },
+    imgUrl: { type: String, required: false },
   },
   {
     timestamps: true,
