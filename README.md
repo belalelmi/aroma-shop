@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+## Aroma Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img alt="Github top language" src="https://img.shields.io/github/languages/top/belalelmi/aroma-shop?style=flat-square&logo=JavaScript"> <img alt='issues' src="https://img.shields.io/github/issues/belalelmi/jungle-rails?style=flat-square&color=informational" >
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+An ecommerce store built with MERN stack, and utilizes third party API's. This ecommerce store enable three main different flows or implementations:
 
-### `npm start`
+1. Buyers browse the store categories, products and brands
+2. Sellers or Merchants manage their own brand component
+3. Admins manage and control the entire store components
 
-Runs the app in the development mode.\
-Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+- features:
+  - Node provides the backend environment for this application
+  - Express middleware is used to handle requests, routes
+  - Mongoose schemas to model the application data
+  - React for displaying UI components
+  - Redux to manage application's state
+  - Redux Thunk middleware to handle asynchronous redux actions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#
 
-### `npm test`
+![""]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install
 
-### `npm run build`
+Some basic Git commands are:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ git clone https://github.com/belalelmi/aroma-shop
+$ cd project
+$ npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+ Create .env file that include:
 
-### `npm run eject`
+  * MONGO_URI & JWT_SECRET
+  * PORT & BASE_SERVER_URL & BASE_API_URL & BASE_CLIENT_URL
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Heroku Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+> Create a Procfile in the root directory of your application with the following command **web: npm run start:production**
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Simple build for production
 
-## Learn More
+```
+$ npm run production
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Run the application for development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ npm start
+```
+
+## Run the application for production
+
+```
+$ npm run start:production
+```
+
+## Languages & tools
+
+- [Node](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Mongoose](https://mongoosejs.com/)
+- [React](https://reactjs.org/)
+- [Webpack](https://webpack.js.org/)
+
+### Code Formatter
+
+- Add a `.vscode` directory
+- Create a file `settings.json` inside `.vscode`
+- Install Prettier - Code formatter in VSCode
+- Add the following snippet:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.jsxSingleQuote": true,
+  "prettier.trailingComma": "none",
+  "javascript.preferences.quoteStyle": "single"
+}
+```
