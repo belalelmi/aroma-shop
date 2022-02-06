@@ -20,7 +20,7 @@ An ecommerce store built with MERN stack, and utilizes third party API's. This e
 
 #
 
-![""]()
+![""](https://github.com/belalelmi/aroma-shop/blob/master/client/public/images/landingpage.png?raw=true)
 
 ## Install
 
